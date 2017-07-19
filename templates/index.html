@@ -4,103 +4,51 @@
     <table class="table table-striped">
         <thead>
         <tr>
+            <th><b>Факт:</b></th>
             <th>Май</th>
             <th>Июнь</th>
-            <th>1..17 июля</th>
             <th>Июль</th>
-            <th><b><<&nbsp;Факт</b></th>
-            <th>Май</th>
-            <th>Июнь</th>
-            <th>1..17 июля</th>
-            <th>Метод расчета</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <td>{% if doh_usp_5 %} {{ doh_usp_5|round(2) }} {% else %} 0 {% endif %}</td>
+            <td><b>доход</b> <i>успешно реализованы</i></td>
+           <td>{% if doh_usp_5 %} {{ doh_usp_5|round(2) }} {% else %} 0 {% endif %}</td>
             <td>{% if doh_usp_6 %} {{ doh_usp_6|round(2) }} {% else %} 0 {% endif %}</td>
-            <td>{% if doh_usp_7_17 %} {{ doh_usp_7_17|round(2) }} {% else %} 0 {% endif %}</td>
             <td>{% if doh_usp_7 %} {{ doh_usp_7|round(2) }} {% else %} 0 {% endif %}</td>
-            <td><b>доход</b> успешно реализованы</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-                <small>сумма выручки по всем заявкам, проходивших шаг воронки “Успешно реализованы”</small>
-            </td>
         </tr>
         <tr>
+
+            <td><b>ср. чек</b> <i>успешно реализованы</i></td>
             <td>{{ av_cheque_5|round(2) }}</td>
             <td>{{ av_cheque_6|round(2) }}</td>
-            <td>{{ av_cheque_7_17|round(2) }}</td>
             <td>{{ av_cheque_7|round(2) }}</td>
-            <td><b>ср. чек</b> успешно реализованы</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-                <small>ср. чек по заявкам, проходивших шаг воронки “Успешно реализованы”</small>
-            </td>
         </tr>
         <tr>
+            <td><b>заявки</b> <i>успешно реализованы</i></td>
             <td>{{ leads_count_5 }}</td>
             <td>{{ leads_count_6 }}</td>
-            <td>{{ leads_count_7_17 }}</td>
             <td>{{ leads_count_7 }}</td>
-            <td><b>заявки</b> успешно реализованы</td>
-            <td>16</td>
-            <td>5</td>
-            <td>4</td>
-            <td>
-                <small>количество заявок, проходивших шаг воронки “Успешно реализованы”</small>
-            </td>
         </tr>
         <tr>
+            <td><b>лиды</b> <i>успешно реализованы</i></td>
             <td>{{ users_count_5 }}</td>
             <td>{{ users_count_6 }}</td>
-            <td>{{ users_count_7_17 }}</td>
             <td>{{ users_count_7 }}</td>
-            <td><b>лиды</b> успешно реализованы</td>
-            <td>3</td>
-            <td></td>
-            <td></td>
-            <td>
-                <small>количество пользователей, которые совершили заявку, проходившую шаг воронки “Успешно реализованы”
-                </small>
-            </td>
         </tr>
         <tr>
+            <td><b>заявки</b> <i>подтверждены</i></td>
             <td>{{ leads_confirm_count_5 }}</td>
             <td>{{ leads_confirm_count_6 }}</td>
-            <td>{{ leads_confirm_count_7_17 }}</td>
             <td>{{ leads_confirm_count_7 }}</td>
-            <td><b>заявки</b> подтверждены</td>
-            <td>115</td>
-            <td>285</td>
-            <td>99</td>
-            <td>
-                <small>количество сделок, проходивших хотя бы одну из 2 предпоследних шагов воронки (2 шага до “Успешно
-                    реализован”)
-                </small>
-            </td>
         </tr>
         <tr>
+            <td><b>лиды</b> <i>подтверждены</i></td>
             <td>{{ users_confirm_count_5 }}</td>
             <td>{{ users_confirm_count_6 }}</td>
-            <td>{{ users_confirm_count_7_17 }}</td>
             <td>{{ users_confirm_count_7 }}</td>
-            <td>лиды<b></b> подтверждены</td>
-            <td>115</td>
-            <td>284</td>
-            <td>99</td>
-            <td>
-                <small>количество пользователей, которые совершили заявку, проходившую хотя бы одну из 2 предпоследних
-                    шагов
-                    воронки (2 шага до “Успешно реализован”)
-                </small>
-            </td>
         </tr>
         </tbody>
     </table>
-    <a class="btn btn-default" href="/update" role="button">Update</a>
+    <a class="btn btn-default" href="/" role="button">Update</a>
 {% endblock %}

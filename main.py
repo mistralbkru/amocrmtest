@@ -8,7 +8,7 @@ from fill_data import auth, fill_leads, fill_notes
 app = Flask(__name__)
 
 
-@app.route('/update', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def update():
     alert = False
     if request.method == 'POST':
@@ -28,7 +28,7 @@ def update():
             if s:
                 fill_leads(s, upload_time, auth_domain)
                 # success = True
-                return redirect('/')
+                return redirect('/result')
             else:
                 alert = True
                 # success = False
@@ -38,7 +38,7 @@ def update():
     return render_template('update.html', alert=alert)#, success=success)
 
 
-@app.route('/')
+@app.route('/result')
 def index():
     may = leads.select().where(leads.date_create >= date(2017, 5, 1), leads.date_create < date(2017, 6, 1))
     juni = leads.select().where(leads.date_create >= date(2017, 6, 1), leads.date_create < date(2017, 7, 1))
