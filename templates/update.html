@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block container %}
+    {% if alert %}<div class="alert alert-danger" role="alert">
+        <h4 class="text-center">Что-то не сработало. Проверьте, пожалуйста введенные данные.</h4>
+    </div>{% endif %}
+
+    <div class="jumbotron">
+        <h4 class="text-center">Если хотя бы одно поле не заполнено, используем email, домен и API ключ по
+            умолчанию</h4>
+        <form class="form-horizontal" id="data_form" method="post" action="">
+            <div class="form-group">
+                <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputDomain" class="col-sm-2 control-label">Домен</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputDomain" name="domain" placeholder="Домен">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-sm-2 control-label">API ключ</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword" name="api_key"
+                           placeholder="API ключ">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Update</button>
+                    <a class="btn btn-default" href="/" role="button">На главную</a>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
